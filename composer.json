@@ -1,0 +1,23 @@
+{
+    "name": "aliyun/opensearch-sdk-php",
+    "description": "Aliyun OSS SDK for PHP",
+    "homepage": "https://www.aliyun.com/product/opensearch",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aliyuncs",
+            "homepage": "http://www.aliyun.com"
+        }
+    ],
+    "version": "v3.1.0",
+    "require": {
+        "php": ">=5.3"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "files": [
+            "./OpenSearch/Autoloader/Autoloader.php"
+        ]
+    }
+}
