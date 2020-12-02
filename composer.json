@@ -12,7 +12,8 @@
     ],
     "version": "v3.3.0",
     "require": {
-        "php": ">=5.3"
+        "php": ">=5.3",
+        "alibabacloud/sdk":"^1.8"
     },
     "minimum-stability": "stable",
     "autoload": {
