@@ -56,7 +56,6 @@ class ManageControlClient
         $path = $this->getPath($this->path . "/" . $identity . "/apps/".$appId);
 
         try {
-            \Log::info('mc:remove-app-version', [$path]);
 
             $response = AlibabaCloud::roa()
                 ->product('OpenSearch')
@@ -66,7 +65,6 @@ class ManageControlClient
                 ->body(json_encode([]))
                 ->request();
 
-            \Log::info('mc:remove-app-version:res', [$response]);
 
             if ($response->isSuccess()) {
                 return true;
@@ -94,7 +92,6 @@ class ManageControlClient
 
         try {
 
-            \Log::info('mc:add-app-version', $body);
 
             $response = AlibabaCloud::roa()
                 ->product('OpenSearch')
@@ -104,7 +101,6 @@ class ManageControlClient
                 ->body(json_encode($body))
                 ->request();
 
-            \Log::info('mc:add-app-version:res', [$response]);
 
             if ($response->isSuccess()) {
                 $result = $response->toArray();
@@ -154,4 +150,32 @@ class ManageControlClient
         }
 
     }
+
+    public function getAppList()
+    {
+        $path = $this->getPath( "/apps");
+        try {
+
+            $response = AlibabaCloud::roa()
+                ->product('OpenSearch')
+                ->version($this->version)
+                ->pathPattern($path)
+                ->method('GET')
+                ->body('{}')
+                ->request();
+
+            if ($response->isSuccess()) {
+                $result = $response->toArray();
+                return $result['result'] ? $result['result'] : [];
+            }
+
+            return false;
+        } catch (ClientException $e) {
+            throw new \Exception($e->getErrorMessage());
+        } catch (ServerException $e) {
+            throw new \Exception($e->getErrorMessage());
+        }
+    }
+
+
 }
