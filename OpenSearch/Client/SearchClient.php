@@ -20,9 +20,7 @@
 
 namespace OpenSearch\Client;
 
-use OpenSearch\Generated\Search\Config;
 use OpenSearch\Generated\Search\OpenSearchSearcherServiceIf;
-use OpenSearch\Generated\Search\SearchFormat;
 use OpenSearch\Generated\Search\SearchParams;
 use OpenSearch\Util\UrlParamsBuilder;
 

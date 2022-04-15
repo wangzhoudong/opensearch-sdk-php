@@ -191,7 +191,7 @@ class Config {
   }
 
   public function getName() {
-    return 'Config';
+    return 'Client';
   }
 
   public function read($input)
@@ -307,7 +307,7 @@ class Config {
 
   public function write($output) {
     $xfer = 0;
-    $xfer += $output->writeStructBegin('Config');
+    $xfer += $output->writeStructBegin('Client');
     if ($this->appNames !== null) {
       if (!is_array($this->appNames)) {
         throw new TProtocolException('Bad type in structure.', TProtocolException::INVALID_DATA);
