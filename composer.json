@@ -10,7 +10,7 @@
             "homepage": "http://www.aliyun.com"
         }
     ],
-    "version": "v3.3.2",
+    "version": "v3.3.3",
     "require": {
         "php": ">=7.0",
         "alibabacloud/opensearch-20171225": "^1.0.5",
