@@ -151,9 +151,9 @@ class ManageControlClient
 
     }
 
-    public function getAppList()
+    public function getAppList($appGroupIdentity)
     {
-        $path = $this->getPath( "/apps");
+        $path = $this->getPath( "/app-groups/{$appGroupIdentity}/apps");
         try {
 
             $response = AlibabaCloud::roa()
