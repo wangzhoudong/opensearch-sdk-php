@@ -56,7 +56,7 @@ class UserAnalyzerEntriesClient
 
         return $this->client->create()
             ->setBody($body)
-            ->pushUserAnalyzerEntries($name);
+            ->pushUserAnalyzerEntries($name, $body);
     }
 
 
