@@ -21,7 +21,7 @@ class OpenSearch extends BaseOpenSearch
 {
     private ?Model $_body = null;
 
-    public function pushUserAnalyzerEntriesWithOptions($name, $headers, $runtime)
+    public function pushUserAnalyzerEntriesWithOptions($name, $request, $headers, $runtime)
     {
         Utils::validateModel($this->getBody());
 
